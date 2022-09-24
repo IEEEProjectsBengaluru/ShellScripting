@@ -1,11 +1,11 @@
 ## Add an operating system image in Vagrant
 
 - Open command prompt/terminal window from your PC
-- Execute following command to download the operating system. You only need to download the operating system oncce as this image will be cloned when you create a new VM with this name.
+- Execute following command to download the operating system. You only need to download the operating system once as this image will be cloned when you create a new VM with this name.
   - $ vagrant box add <USER/BOX>
   - eg:- $ vagrant box add debian/jessie64
 - After executing this command you will see something like this , indicating an operating system is downloaded in your system
--  <img src= https://github.com/IEEEProjectsBengaluru/ShellScripting/blob/main/Create%20a%20Virtual%20Machine/Screenshot%20from%202022-08-28%2017-03-30.png>
+-  <img src= https://github.com/IEEEProjectsBengaluru/ShellScripting/blob/main/Create%20a%20Virtual%20Machine/image1.png>
 - Create a directory for maintaining all files in one folder
   - $ mkdir myShellClass
   - $ cd myShellClass
@@ -17,7 +17,7 @@
   - $ cd testbox01
 - Create a Vagrant configuration file by executing following command. This command will create a configuration file in the project folder
   - $ vagrant init debian/jessie64
-  - <img src= https://github.com/IEEEProjectsBengaluru/ShellScripting/blob/main/Create%20a%20Virtual%20Machine/Screenshot%20from%202022-08-28%2017-26-42.png>
+  - <img src= https://github.com/IEEEProjectsBengaluru/ShellScripting/blob/main/Create%20a%20Virtual%20Machine/image2.png>
 
 ## Launch Virtual Machine
 
