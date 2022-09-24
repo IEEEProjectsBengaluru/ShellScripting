@@ -1,6 +1,6 @@
-﻿**Hello world Shell Script**
+# Hello world Shell Script
 
-**Initial configuration steps**
+## Initial configuration steps
 
 - Open command window/terminal
 - Change to your prefered directory where you would keep all files
@@ -19,7 +19,7 @@
 - Connect to the VM using secure shell  
   - $ vagrant ssh
 
-**Understanding the folder structure in VM and local PC**
+## Understanding the folder structure in VM and local PC
 
 - After connecting to the VM via SSH , execute following command
   - $ cd /vagrant
@@ -28,7 +28,7 @@
 - You will also see the read-write-execute status (file permissions) for owner, group and others(everybody else)
 - Observe that this is the same directory on your local PC where you have done vagrant init command. (This folder is mounted in VM)
 
-**Creating a shell file in Linux**
+## Creating a shell file in Linux
 
 - Execute following command to create a file in Linux (you can use any editor that is available in the Linux OS, I have used nano editor here)
   - $ nano myfile.sh
@@ -42,7 +42,7 @@
   - $ cat myfile.sh
 
 
-**Hello world shell script**
+## Hello world shell script
 
 - Create a new shell script HelloWorld.sh
   - $ nano HelloWorld.sh
@@ -55,7 +55,7 @@
   - ‘./’ - ‘.’ represents this directory and ‘/’ represents directory seperator
 
 
-**Understanding the file permissions**
+## Understanding the file permissions
 
 - Say that you dont have the file permissions to execute a file, this is how you will run into the issues
 - Create a blank/empty file
@@ -66,7 +66,7 @@
   - $ ./random.sh
   - You will see permission denied issue when you execute this command
 
-**Understanding builtin commands**
+## Understanding builtin commands
 
 - echo command is a shell builtin. To know if a command is shell built-in execute ‘type’ command
   - $ type echo
