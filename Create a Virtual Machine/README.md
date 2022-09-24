@@ -1,4 +1,4 @@
-**Add an operating system image in Vagrant**
+## Add an operating system image in Vagrant
 
 - Open command prompt/terminal window from your PC
 - Execute following command to download the operating system. You only need to download the operating system oncce as this image will be cloned when you create a new VM with this name.
@@ -10,7 +10,7 @@
   - $ mkdir myShellClass
   - $ cd myShellClass
 
-**Create a Vagrant project folder**
+## Create a Vagrant project folder
 
 - Create a folder before creating an Vagrant project
   - $ mkdir testbox01
@@ -19,7 +19,7 @@
   - $ vagrant init debian/jessie64
   - <img src= https://github.com/IEEEProjectsBengaluru/ShellScripting/blob/main/Create%20a%20Virtual%20Machine/Screenshot%20from%202022-08-28%2017-26-42.png>
 
-**Launch Virtual Machine**
+## Launch Virtual Machine
 
 - Execute the following command to launch the VM. By default the VM will start in headless mode without any UI.
   - $ vagrant up
@@ -29,7 +29,7 @@
   - $ vagrant status
 
 
-**Connect to the VM using secure shell**
+## Connect to the VM using secure shell
 
 - Execute following command to connect to VM.
   - $ vagrant ssh
@@ -38,13 +38,12 @@
   - $ exit
 
 
-**Stop the VM**
+## Stop the VM
 
 - To stop the VM execute following command, this command shuts down the VM.
   - $ vagrant halt
 
-
-**Additional Info**
+## Additional Info
 
 - To set the name of VM, follow these steps
   - Open the configuration file “Vagrantfile” and add following line right after the box name
