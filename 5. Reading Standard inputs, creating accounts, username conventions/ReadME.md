@@ -1,9 +1,9 @@
-﻿**Reading Standard inputs, creating accounts, username conventions**
+# Reading Standard inputs, creating accounts, username conventions
 
 Lets create a script which creates an account on the local system by asking username and account
 
 
-**Reading Standard inputs**
+## Reading Standard inputs
 
 - Lets ask the username
   - read -p 'Enter the username to create: ' USER\_NAME
@@ -16,7 +16,7 @@ Lets create a script which creates an account on the local system by asking user
 - Lets ask for the password.
   - read -p 'Enter the password to use for the account: ' PASSWORD
 
-**Create an user account**
+## Create an user account
 
 - To create a user
   - useradd -c "${COMMENT}" -m ${USER\_NAME}
