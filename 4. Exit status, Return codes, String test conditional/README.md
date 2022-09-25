@@ -24,7 +24,7 @@ Lets understand these things through an example. Lets create a script to display
   - USER\_NAME=$(id -un)
 - Test if the command succeeded
   - if [[ "${?}" -ne 0 ]]
-  - # ${?} - is the special variable which holds the exist status of most recent command
+  - #${?} - is the special variable which holds the exist status of most recent command
   - then
   -  echo 'The id command didn not execute successsfully.'
   -  exit 1
