@@ -1,9 +1,9 @@
-﻿**Random Data, Cryptographic hash functions and string manipulation**
+# Random Data, Cryptographic hash functions and string manipulation
 
 Lets generate a random passwords for the users
 
 
-**Generate Random numbers – using builtin variables**
+## Generate Random numbers – using builtin variables
 
 - Create a new shell script
 - There is an shell builtin variable called RANDOM, we can confirm that $ man bash
@@ -14,7 +14,7 @@ Lets generate a random passwords for the users
   - PASSWORD="${RANDOM}${RANDOM}${RANDOM}"
   - echo "${PASSWORD}"
 
-**Generate Random numbers – using date and time builtin variables**
+## Generate Random numbers – using date and time builtin variables
 
 - To generate random data we can also use the current data/time as the basis for the password, as time is always changing
   - PASSWORD=$(date +%s)
@@ -23,8 +23,8 @@ Lets generate a random passwords for the users
 - Using nano seconds will add more complexity in the password to hack. And to use nano seconds to act as randomisation
   - PASSWORD=$(date +%s%N)
   - echo "${PASSWORD}"
-
-**Generate Random numbers – using cryptographic hash functions (checksum)**
+  
+  ## Generate Random numbers – using cryptographic hash functions (checksum)
 
 - A better password will be using checksum sha256sum builtin (cryptographic hash functions)
   - PASSWORD=$(date +%s%N | sha256sum | head -c32)
@@ -41,7 +41,7 @@ Lets generate a random passwords for the users
   - PASSWORD=$(date +%s%N${RANDOM}${RANDOM} | sha256sum | head -c48)
   - echo "${PASSWORD}"
 
-**Add special characters to the password**
+## Add special characters to the password
 
 - Append a special character to the password.
   - SPECIAL\_CHARACTER=$(echo '!@#$%^&\*()\_+-=' | fold -w1 | shuf | head -c1)
