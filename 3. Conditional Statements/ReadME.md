@@ -1,8 +1,8 @@
-﻿**Conditional statements**
+# Conditional statements
 
 In this session we will see how to use conditional statements. In this demo lets see if the user executing this script is a is root user or other user.
 
-**Steps**
+## Steps
 
 - Launch VM and create a new schell script
 - First get the UID and display
@@ -21,9 +21,9 @@ In this session we will see how to use conditional statements. In this demo lets
 - Lets write a conditional statment to see if the user is root user or not
   - if [[ “${UID}” -eq 0 ]]
   - then
-  - `     `echo ‘You are root’
+  - echo 'You are root'
   - else
-  - `     `echo ‘You are not root’
+  - echo 'You are not root'
   - fi
 - To get a help on if command do
   - $ type -a if
