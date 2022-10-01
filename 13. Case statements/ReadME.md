@@ -23,7 +23,7 @@ The goal of this exercise is to understand the usage of case in shell scripting.
   -  exit 1
   - fi
 - The same code can be written using case statements, like
-  - # This ideal format of a case statement follows.
+  - #This ideal format of a case statement follows.
   - case "${1}" in
   - start)
   - echo 'Starting.'
