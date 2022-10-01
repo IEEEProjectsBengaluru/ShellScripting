@@ -60,3 +60,16 @@ This repository contains few basic shell scripts
   - For loops and Special Parameter
 - While loops, infinite loops, Shifting and Sleeping
   - Loops, Sleep and Shift
+- Creating Local Users - Script 2
+- Standard Input, Standard Output and Standard error
+  - STDIN and STDOUT
+  - STDERR
+- Creating Local Users - Script 2
+- Case statements
+- Functions
+  - Functions with no input arguments
+  - Functions with input arguments
+  - Functions with input arguments and global variables
+  - Logger command
+  - Another function to back up files
+  -   
