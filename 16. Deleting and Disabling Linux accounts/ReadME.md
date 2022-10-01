@@ -1,9 +1,9 @@
-﻿**Deleting and Disabling Linux accounts**
+# Deleting and Disabling Linux accounts
 
 In this demo we will see how we can disable, delete and archive users on a Linux systems.
 
 
-**Finding files**
+## Finding files
 
 - The command to delete a user from Linux command is userdel.
 - $ type -a userdel -> this says userdel is not found
@@ -25,7 +25,7 @@ In this demo we will see how we can disable, delete and archive users on a Linux
   - $ find / -name userdel 2>/dev/null
   - $ sudo find / -name userdel
 
-**Userdel command**
+## Userdel command
 
 - Lets see how we can use userdel command
   - $ man userdel
@@ -41,7 +41,7 @@ In this demo we will see how we can disable, delete and archive users on a Linux
   - ls -l /home/<username>
 
 
-**Archiving files**
+## Archiving files
 
 - To archive files we can use tar command
   - $ type -a tar
@@ -64,39 +64,33 @@ In this demo we will see how we can disable, delete and archive users on a Linux
   - $ tar -zcvf myarch.tar.gz randomVideos/
   - $ ls
 
-**Disabling account**
+## Disabling account
 
 - To disable the account we can use chage command
   - $ man chage
   - $ sudo chage -E 0 <username> # to disable this account
   - $ sudo chage -E 1 <username> # to enable the account
 
-**Create a script**
+## Create a script
 
 - Create a new script delUser.sh
-  - # This script deletes a user.
-
-  - # Run as root.
+  - #This script deletes a user.
+  - #Run as root.
   - if [[ "${UID}" -ne 0 ]]
   - then
-  - `   `echo 'Please run with sudo or as root.' >&2
-  - `   `exit 1
+  - echo 'Please run with sudo or as root.' >&2
+  - exit 1
   - fi
-
-  - # Assume the first argument is the user to delete.
+  - #Assume the first argument is the user to delete.
   - USER="${1}"
-
-  - # Delete the user.
+  - #Delete the user.
   - userdel ${USER}
-
-  - # Make sure the user got deleted.
+  - #Make sure the user got deleted.
   - if [[ "${?}" -ne 0 ]]
   - then
-  - `  `echo "The account ${USER} was NOT deleted." >&2
-  - `  `exit 1
+  - echo "The account ${USER} was NOT deleted." >&2
+  - exit 1
   - fi
-
-  - # Tell the user the account was deleted.
+  - #Tell the user the account was deleted.
   - echo "The account ${USER} was deleted."
-
   - exit 0
