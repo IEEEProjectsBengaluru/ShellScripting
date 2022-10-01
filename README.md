@@ -37,12 +37,26 @@ This repository contains few basic shell scripts
   - Using variables inside a hard-coded text
   - Appending text to a variable
   - Combining two variables
+- Arithmetic expansion and valuation
+  - Arithmetic expansion
+  - Arithmetic operations using awk command
+  - Arithemtic operations using ‘let’ command
+  - Arithmetic operations using ‘expr’ command
 - Conditional statements
 - Exit status, Return codes, String test conditional
 - Reading Standard inputs, creating accounts, username conventions
+  - Reading Standard inputs
+  - Create an user account
 - Shell script to add users to Linux
 - Random Data, Cryptographic hash functions and string manipulation
   - Generate Random numbers – using builtin variables
   - Generate Random numbers – using date and time builtin variables
   - Generate Random numbers – using cryptographic hash functions (checksum)
   - Add special characters to the password
+- Positional Parameters, Arguments, for Loops and Special Parameters
+  - Understanding the command serarch path or PATH env variable
+  - Positional Parameter
+  - Parameters
+  - For loops and Special Parameter
+- While loops, infinite loops, Shifting and Sleeping
+  - Loops, Sleep and Shift
