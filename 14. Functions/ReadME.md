@@ -99,7 +99,7 @@ Functions is a group of commands that can be called using a single name in a scr
   - then
   - local BACKUP\_FILE="/var/tmp/$(basename ${FILE}).$(date +%F-%N)"
   - log "Backing up ${FILE} to ${BACKUP\_FILE}."
-  - # The exit status of the function will be the exit status of the cp command.
+  - #The exit status of the function will be the exit status of the cp command.
   - cp -p ${FILE} ${BACKUP\_FILE}
   - else
   - #The file does not exist, so return a non-zero exit status.
