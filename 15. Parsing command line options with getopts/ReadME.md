@@ -1,0 +1,120 @@
+﻿**Parsing command line options with getopts**
+
+The getopts options are used in shell scripts to parse arguments passed to them. When arguments are passed on the command line, getopts parse those arguments instead of command lines.
+
+Lets write a script which generates a password using getopts. The user can set the password length with -l and add a special character with -s.  And verbose mode can be enabled with -v.
+
+**Steps**
+
+- getopts is a shell builtin $ type -a getopts $ help getopts | less
+- Create a new script ParseCommandLineOptions.sh
+- Set a default password length
+  - LENGTH=48
+- This default value will be override by the user input argument with -l
+- Lets use while loop in conjunction with getopts to parse inputs
+  - while getopts vl:s OPTION
+  - #l:s means the l option must follow another option of it own
+  - do
+  - `   `case ${OPTION} in
+  - `    `v)
+  - `      `VERBOSE='true'
+  - `      `log 'Verbose mode on.'
+  - `      `;;
+  - `    `l)
+  - `      `LENGTH="${OPTARG}"
+  - `      `;;
+  - `    `s)
+  - `      `USE\_SPECIAL\_CHARACTER='true'
+  - `      `;;
+  - `    `?)
+  - `      `echo ‘Invalid option.’ >&2
+  - `      `exit 1
+  - `      `;;
+  - `  `esac
+  - done
+- OPTARG – When option require an arguments getopts places that argument into the shell variable OPTARG
+- ? - this is the pattern for single character
+- Save and run
+  - $ ./ParseCommandLineOptions.sh -v
+  - $ ./ ParseCommandLineOptions.sh -s
+  - $ ./ ParseCommandLineOptions.sh -l
+  - $ ./ ParseCommandLineOptions.sh -l  8
+  - $ ./ ParseCommandLineOptions.sh -x
+- Instead of errorin invalid option, provide a way to let the users know on how to use this script. Lets create a function and add it in case statement.
+  - usage() {
+  - `  `echo "Usage: ${0} [-vs] [-l LENGTH]" >&2
+  - `  `echo 'Generate a random password.' >&2
+  - `  `echo '  -l LENGTH  Specify the password length.' >&2
+  - `  `echo '  -s         Append a special character to the password.' >&2
+  - `  `echo '  -v         Increase verbosity.' >&2
+  - `  `exit 1
+  - }
+  - #Set a default password length.
+  - LENGTH=48
+
+  - while getopts vl:s OPTION
+  - do
+  - `  `case ${OPTION} in
+  - `    `v)
+  - `      `VERBOSE='true'
+  - `      `log 'Verbose mode on.'
+  - `      `;;
+  - `    `l)
+  - `      `LENGTH="${OPTARG}"
+  - `      `;;
+  - `    `s)
+  - `      `USE\_SPECIAL\_CHARACTER='true'
+  - `      `;;
+  - `    `?)
+  - `      `usage
+  - `      `;;
+  - `  `esac
+  - done
+- Save and execute
+  - $ ./ ParseCommandLineOptions.sh -x
+- Lets create a new function for verbose
+  - log() {
+  - `  `local MESSAGE="${@}"
+  - `  `if [[ "${VERBOSE}" = 'true' ]]
+  - `  `then
+  - `    `echo "${MESSAGE}"
+  - `  `fi
+  - }
+- Now lets generate a password
+  - log 'Generating a password.'
+  - PASSWORD=$(date +%s%N${RANDOM}${RANDOM} | sha256sum | head -c${LENGTH})
+- Lets see if we can append special character or not
+  - # Append a special character if requested to do so.
+  - if [[ "${USE\_SPECIAL\_CHARACTER}" = 'true' ]]
+  - then
+  - `  `log 'Selecting a random special character.'
+  - `  `SPECIAL\_CHARACTER=$(echo '!@#$%^&\*()\_-+=' | fold -w1 | shuf | head -c1)
+  - `  `PASSWORD="${PASSWORD}${SPECIAL\_CHARACTER}"
+  - fi
+
+  - log 'Done.'
+  - log 'Here is the password:'
+- Display the password.
+  - echo "${PASSWORD}"
+  - exit 0
+- Save and run
+  - $ ./ParseCommandLineOptions.sh
+  - $ ./ ParseCommandLineOptions.sh -s
+  - $ ./ ParseCommandLineOptions.sh -sv
+  - $ ./ ParseCommandLineOptions.sh -vs
+  - $ ./ ParseCommandLineOptions.sh -s -v
+  - $ ./ ParseCommandLineOptions.sh -l 8
+  - $ ./ ParseCommandLineOptions.sh -ls 8
+- Now remove the options while leaving the remaining arguments.
+  - shift "$(( OPTIND - 1 ))"
+
+  - if [[ "${#}" -gt 0 ]]
+  - then
+  - `  `usage
+  - fi
+- OPTIND - is the index of the next argument to be processed.
+- Save and run
+  - $ ./ParseCommandLineOptions.sh apple
+  - $ echo $?
+  - $ ./ParseCommandLineOptions.sh -s apple
+  - $ ./ParseCommandLineOptions.sh -s
