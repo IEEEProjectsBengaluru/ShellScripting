@@ -15,7 +15,7 @@ This repository contains few basic shell scripts
 - After installing both the softwares reboot your PC.
 
 
-## Course Details
+## Content Details
 
 - Connect to a Virtual Machine using Vagrant and VirtualBox
   - Add an operating system image in Vagrant
@@ -72,4 +72,14 @@ This repository contains few basic shell scripts
   - Functions with input arguments and global variables
   - Logger command
   - Another function to back up files
-  -   
+- Parsing command line options with getopts
+- Deleting and Disabling Linux accounts
+  - Finding files
+  - Userdel command
+  - Archiving files
+  - Disabling account
+- Deleting local user
+- Cut and Awk commands
+- Sort and uniq commands
+- Parsing log files
+
