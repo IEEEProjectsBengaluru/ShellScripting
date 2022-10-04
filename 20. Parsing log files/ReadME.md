@@ -26,7 +26,7 @@ The goal of this exercise is to create a shell script that displays the number o
   - LIMIT='10'
   - LOG\_FILE="${1}"
 - Make sure a file was supplied as an argument.
-  - if [[ ! -e "${LOG\_FILE}" ]]
+  - if [[ ! -e "${LOG_FILE}" ]]
   - then
   - echo "Cannot open log file: ${LOG\_FILE}" >&2
   - exit 1
@@ -34,7 +34,7 @@ The goal of this exercise is to create a shell script that displays the number o
 - Display the CSV header.
   - echo 'Count,IP,Location'
 - Loop through the list of failed attempts and corresponding IP addresses.
-- grep Failed ${LOG\_FILE} | awk '{print $(NF - 3)}' | sort | uniq -c | sort -nr |  while read COUNT IP
+  - grep Failed${LOG_FILE} | awk '{print $(NF - 3)}' | sort | uniq -c | sort -nr |  while read COUNT IP
   - do
   - #If the number of failed attempts is greater than the limit, display count, IP, and location.
   - if [[ "${COUNT}" -gt "${LIMIT}" ]]
