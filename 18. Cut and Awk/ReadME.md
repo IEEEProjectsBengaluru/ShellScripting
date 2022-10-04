@@ -1,10 +1,8 @@
-﻿**Cut and Awk commands**
+# Cut and Awk commands
 
-In this session we will see how we can use cut and awk commands. The cut command is used for cutting out sections from each line of input it receives. The awk command
+In this session we will see how we can use cut and awk commands. The cut command is used for cutting out sections from each line of input it receives. The awk command searches files for text containing a pattern.
 
-searches files for text containing a pattern.
-
-**Cut command**
+## Cut command
 
 - Cut is not a shell builtin
   - $ type -a cut
@@ -22,7 +20,7 @@ searches files for text containing a pattern.
   - $ cut -d ‘:’ -f 1,3 /etc/passwd
   - $ cut -d ‘:’ -f 1,3  --output-delimiter=’,’ /etc/passwd
 
-**AWK Command**
+## AWK Command
 
 - Lets try the same command that we used using cut
   - $ cut -d ‘:’ -f 1,3 /etc/passwd
@@ -42,7 +40,7 @@ searches files for text containing a pattern.
   - $ awk ‘{print $1, $2}’ lines
 
 
-**Script**
+## Script
 
 - Lets say that we want a list of port numbers that are opened in our system. The netstat command displays the open ports in a local system.
   - $ netstat -nutl
