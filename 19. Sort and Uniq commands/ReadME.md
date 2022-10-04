@@ -1,7 +1,6 @@
-﻿**Sort and Uniq commands**
+# Sort and Uniq commands
 
-
-**Steps**
+## Steps
 
 - Lets see how sort command works on a file
   - $ cat /etc/passwd
