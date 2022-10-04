@@ -1,8 +1,8 @@
-﻿**Parsing Log Files**
+# Parsing Log Files
 
 The goal of this exercise is to create a shell script that displays the number of failed login attempts by IP address and location.
 
-**Steps**
+## Steps
 
 - Lets take a look at the sample data ‘syslog-sample’
   - $ cat syslog-sample
