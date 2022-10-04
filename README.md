@@ -82,4 +82,4 @@ This repository contains few basic shell scripts
 - Cut and Awk commands
 - Sort and uniq commands
 - Parsing log files
-
+- Scripting remote commands
