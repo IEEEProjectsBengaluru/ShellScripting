@@ -1,8 +1,8 @@
-﻿**Scripting remote commands**
+# Scripting remote commands
 
 The goal of this exercise is to create a shell script that executes a given command on multiple servers.
 
-**Steps**
+## Steps
 
 - This requires multiple VMs to be configured in vagrant configuation file
 - From your local machine cd to a file where you would want the script to be present
